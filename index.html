@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Criar Araújo — Produção audiovisual e marketing | Campinas-SP</title>
+<meta name="description" content="Produção audiovisual, tráfego pago, social media e identidade visual em Campinas-SP. Fale com Kauan Araújo pelo WhatsApp.">
+<link rel="icon" href="assets/logo-transparente.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&amp;family=Inter:wght@400;500;600&amp;family=Great+Vibes&amp;display=swap">
+<style>
+body{margin:0;background:#0A0A0A}
+a{color:#FFDD5E}a:hover{color:#FFE88F}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@keyframes ca-blink{0%,49%{opacity:1}50%,100%{opacity:.15}}
+@keyframes ca-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes ca-spin{to{transform:rotate(360deg)}}
+@keyframes ca-shutter-top{0%{transform:translateY(0)}100%{transform:translateY(-101%)}}
+@keyframes ca-shutter-bot{0%{transform:translateY(0)}100%{transform:translateY(101%)}}
+@keyframes ca-rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes ca-focus{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(.94);opacity:1}}
+@keyframes ca-scan{from{transform:translateY(-100%)}to{transform:translateY(100vh)}}
+@keyframes ca-flash{0%,92%,100%{opacity:0}94%{opacity:.55}}
+@keyframes ca-reveal{from{opacity:0;transform:translateY(48px) scale(.98);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+@keyframes ca-wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes ca-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes ca-pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}100%{box-shadow:0 0 0 18px rgba(37,211,102,0)}}
+.ca-blink{animation:ca-blink 1.2s steps(1) infinite}
+.ca-marquee{animation:ca-marquee 28s linear infinite}
+.ca-marquee-rev{animation:ca-marquee 34s linear infinite reverse}
+.ca-spin{animation:ca-spin 40s linear infinite}
+.ca-spin-fast{animation:ca-spin 14s linear infinite}
+.ca-shutter-top{animation:ca-shutter-top 1.1s cubic-bezier(.77,0,.18,1) .25s forwards}
+.ca-shutter-bot{animation:ca-shutter-bot 1.1s cubic-bezier(.77,0,.18,1) .25s forwards}
+.ca-rise-1{opacity:0;animation:ca-rise .9s ease 1.0s forwards}
+.ca-rise-2{opacity:0;animation:ca-rise .9s ease 1.2s forwards}
+.ca-rise-3{opacity:0;animation:ca-rise .9s ease 1.4s forwards}
+.ca-rise-4{opacity:0;animation:ca-rise .9s ease 1.6s forwards}
+.ca-focus{animation:ca-focus 2.6s ease-in-out infinite}
+.ca-flash{animation:ca-flash 7s linear infinite}
+.ca-float{animation:ca-float 5s ease-in-out infinite}
+.ca-pulse{animation:ca-pulse 1.8s ease-out infinite}
+@supports (animation-timeline: view()){
+.ca-reveal{animation:ca-reveal linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
+.ca-wipe{animation:ca-wipe linear both;animation-timeline:view();animation-range:entry 10% cover 35%}
+}
+@keyframes ca-snap-top{0%{transform:translateY(-101%)}35%,55%{transform:translateY(0)}100%{transform:translateY(-101%)}}
+@keyframes ca-snap-bot{0%{transform:translateY(101%)}35%,55%{transform:translateY(0)}100%{transform:translateY(101%)}}
+@keyframes ca-snap-flash{0%,50%{opacity:0}58%{opacity:.95}100%{opacity:0}}
+@keyframes ca-desc-in{from{opacity:0;max-height:0;transform:translateY(-8px)}to{opacity:1;max-height:220px;transform:none}}
+@keyframes ca-ring{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.ca-snap-top{animation:ca-snap-top .75s cubic-bezier(.7,0,.3,1) forwards}
+.ca-snap-bot{animation:ca-snap-bot .75s cubic-bezier(.7,0,.3,1) forwards}
+.ca-snap-flash{opacity:0;animation:ca-snap-flash .75s ease-out forwards}
+.ca-desc{overflow:hidden;opacity:0;animation:ca-desc-in .6s ease .55s forwards}
+.ca-shot:hover .ca-icon-ring{animation:ca-ring 1.2s ease-in-out infinite;border-color:#FFDD5E !important}
+.ca-shot:focus-visible{outline:2px solid #FFDD5E;outline-offset:3px}
+@keyframes ca-iris{0%{width:260%}55%,72%{width:0%}100%{width:260%;opacity:0}}
+@keyframes ca-iris-dot{0%,40%{opacity:0}55%,72%{opacity:1}80%,100%{opacity:0}}
+@keyframes ca-desc-out{from{opacity:1;max-height:220px}to{opacity:0;max-height:0;transform:translateY(-8px)}}
+@keyframes ca-zoomfocus{0%{transform:scale(1.45);filter:blur(10px) brightness(.8)}45%{transform:scale(1.08);filter:blur(3px)}62%{transform:scale(1.14);filter:blur(5px)}100%{transform:scale(1);filter:none}}
+@keyframes ca-af{0%{transform:scale(2.2);opacity:0}50%{transform:scale(1.2);opacity:1;border-color:#FFDD5E}85%{transform:scale(1);opacity:1;border-color:#34C759}100%{transform:scale(1);opacity:0;border-color:#34C759}}
+@keyframes ca-zoomtext{0%{transform:scale(1.6);filter:blur(12px);opacity:0}55%{transform:scale(.96);filter:blur(2px);opacity:1}75%{transform:scale(1.03);filter:blur(4px)}100%{transform:none;filter:none;opacity:1}}
+@keyframes ca-hunt{0%,70%,100%{transform:scale(1);filter:none}78%{transform:scale(1.12);filter:blur(5px)}86%{transform:scale(1.04);filter:blur(1.5px)}}
+.ca-iris{animation:ca-iris .9s cubic-bezier(.65,0,.35,1) forwards}
+.ca-iris-dot{opacity:0;animation:ca-iris-dot .9s linear forwards}
+.ca-desc-out{display:block;overflow:hidden;animation:ca-desc-out .45s ease forwards}
+.ca-zoomfocus{animation:ca-hunt 7s ease-in-out infinite}
+.ca-af{animation:ca-af 7s ease-in-out infinite}
+@supports (animation-timeline: view()){
+.ca-zoomfocus{animation:ca-zoomfocus linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
+.ca-af{animation:ca-af linear both;animation-timeline:view();animation-range:entry 0% cover 50%}
+.ca-zoomtext{animation:ca-zoomtext linear both;animation-timeline:view();animation-range:entry 0% cover 35%}
+}
+.ca-card{transition:transform .35s ease,border-color .35s ease,background .35s ease}
+.ca-card:hover{transform:translateY(-6px);border-color:#FFDD5E !important;background:#151515 !important}
+.ca-btn{transition:transform .2s ease,background .2s ease}
+.ca-btn:hover{transform:translateY(-2px)}
+.ca-input:focus{outline:2px solid #FFDD5E;outline-offset:1px;border-color:#FFDD5E !important}
+.ca-video-frame:hover .ca-play-hint{opacity:0}
+@media (prefers-reduced-motion: reduce){
+.ca-blink,.ca-marquee,.ca-marquee-rev,.ca-spin,.ca-spin-fast,.ca-focus,.ca-flash,.ca-float,.ca-pulse{animation:none}
+.ca-shutter-top,.ca-shutter-bot{animation:none;display:none}
+.ca-rise-1,.ca-rise-2,.ca-rise-3,.ca-rise-4{animation:none;opacity:1}
+.ca-reveal,.ca-wipe{animation:none}
+.ca-snap-top,.ca-snap-bot,.ca-snap-flash{display:none}
+.ca-desc{animation:none;opacity:1}
+.ca-iris,.ca-iris-dot{display:none}
+.ca-zoomfocus,.ca-af,.ca-zoomtext{animation:none}
+.ca-af{opacity:0}
+}
+
+.ca-pill{min-height:44px;padding:0 16px;border-radius:999px;font:600 14px Inter,sans-serif;cursor:pointer;transition:all .2s ease;background:transparent;color:#D9D9D4;border:1px solid #3A3A3A}
+.ca-pill[aria-pressed="true"]{background:#FFDD5E;color:#0A0A0A;border-color:#FFDD5E}
+[hidden]{display:none !important}
+</style>
+</head>
+<body>
+<div style="position: relative; width: 100%; min-height: 100vh; background: #0A0A0A; color: #F5F5F2; font-family: Inter, system-ui, sans-serif; overflow-x: hidden">
+
+<!-- Shutter intro -->
+<div class="ca-shutter-top" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 50vh; background: #000; z-index: 60; border-bottom: 2px solid #FFDD5E; pointer-events: none"></div>
+<div class="ca-shutter-bot" aria-hidden="true" style="position: absolute; left: 0; top: 50vh; width: 100%; height: 50vh; background: #000; z-index: 60; border-top: 2px solid #FFDD5E; pointer-events: none"></div>
+
+<!-- Nav -->
+<header style="position: sticky; top: 0; z-index: 40; background: #000; border-bottom: 1px solid #1E1E1E">
+<div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#topo" style="display: flex; align-items: center" aria-label="Criar Araújo — início"><img src="assets/logo-transparente.png" alt="Criar Araújo" style="height: 48px; width: auto; display: block"></a>
+<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 14px; font-weight: 500; letter-spacing: .02em">
+<a href="#servicos" style="color: #D9D9D4; text-decoration: none">Serviços</a>
+<a href="#portfolio" style="color: #D9D9D4; text-decoration: none">Portfólio</a>
+<a href="#sobre" style="color: #D9D9D4; text-decoration: none">Sobre</a>
+<a href="#contato" style="color: #D9D9D4; text-decoration: none">Contato</a>
+</nav>
+<a class="ca-btn" href="https://wa.me/5519993392003" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 20px; background: #FFDD5E; color: #0A0A0A; border-radius: 999px; font-weight: 600; font-size: 14px; text-decoration: none">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-3.8A9 9 0 1 1 7.5 20L3 21"></path><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path></svg>
+(19) 99339-2003</a>
+</div>
+</header>
+
+<!-- Hero -->
+<section id="topo" style="position: relative; padding: 72px 24px 96px; overflow: hidden">
+<div class="ca-flash" aria-hidden="true" style="position: absolute; inset: 0; background: #FFF; pointer-events: none; z-index: 5"></div>
+<!-- aperture -->
+<svg class="ca-spin" aria-hidden="true" viewBox="0 0 200 200" style="position: absolute; right: -180px; top: -120px; width: 620px; height: 620px; opacity: .07" fill="none" stroke="#FFDD5E" stroke-width="1.4"><circle cx="100" cy="100" r="96"></circle><circle cx="100" cy="100" r="40"></circle><path d="M100 4 L134.6 63.2"></path><path d="M183.1 52 L134.6 63.2"></path><path d="M183.1 148 L140 100"></path><path d="M100 196 L134.6 136.8"></path><path d="M16.9 148 L65.4 136.8"></path><path d="M16.9 52 L60 100"></path><path d="M100 4 L65.4 63.2"></path><path d="M183.1 148 L134.6 136.8"></path><path d="M16.9 148 L60 100"></path></svg>
+
+<div style="position: relative; max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<div class="ca-rise-1" style="display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; padding: 8px 14px; border: 1px solid #2A2A2A; border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #CFCFC8">
+<span class="ca-blink" style="width: 9px; height: 9px; border-radius: 50%; background: #FF3B30; display: inline-block"></span>REC · Campinas-SP
+</div>
+<h1 class="ca-rise-2" style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 800; font-size: clamp(38px, 5.6vw, 76px); line-height: 1.04; letter-spacing: -.02em">Sua marca <span style="color: #FFDD5E">em foco.</span><br>Seu negócio em movimento.</h1>
+<p class="ca-rise-3" style="margin: 0; max-width: 560px; font-size: 18px; line-height: 1.6; color: #BDBDB6">Produção audiovisual, tráfego pago, social media e identidade visual — tudo feito por quem entende de câmera e de resultado.</p>
+<div class="ca-rise-4" style="display: flex; flex-wrap: wrap; gap: 14px">
+<a class="ca-btn" href="#contato" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; background: #FFDD5E; color: #0A0A0A; border-radius: 999px; font-weight: 700; text-decoration: none">Quero um orçamento</a>
+<a class="ca-btn" href="#portfolio" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border: 1px solid #3A3A3A; color: #F5F5F2; border-radius: 999px; font-weight: 600; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>Ver trabalhos</a>
+</div>
+</div>
+
+<!-- Viewfinder with video -->
+<div class="ca-rise-3" style="flex: 1 1 320px; display: flex; justify-content: center">
+<div class="ca-float" style="position: relative; width: 320px; max-width: 100%; aspect-ratio: 9 / 16; border-radius: 22px; overflow: hidden; background: #111; border: 1px solid #2A2A2A">
+<video src="assets/video-chacara.mp4" poster="assets/poster-chacara.jpg" autoplay muted loop playsinline aria-label="Vídeo de destaque: chácara" style="width: 100%; height: 100%; object-fit: contain; display: block"></video>
+<!-- viewfinder overlay -->
+<div aria-hidden="true" style="position: absolute; inset: 14px; pointer-events: none">
+<div style="position: absolute; left: 0; top: 0; width: 26px; height: 26px; border-left: 2px solid #FFDD5E; border-top: 2px solid #FFDD5E"></div>
+<div style="position: absolute; right: 0; top: 0; width: 26px; height: 26px; border-right: 2px solid #FFDD5E; border-top: 2px solid #FFDD5E"></div>
+<div style="position: absolute; left: 0; bottom: 0; width: 26px; height: 26px; border-left: 2px solid #FFDD5E; border-bottom: 2px solid #FFDD5E"></div>
+<div style="position: absolute; right: 0; bottom: 0; width: 26px; height: 26px; border-right: 2px solid #FFDD5E; border-bottom: 2px solid #FFDD5E"></div>
+<div class="ca-focus" style="position: absolute; left: 50%; top: 42%; width: 64px; height: 64px; margin: -32px 0 0 -32px; border: 1.5px solid rgba(255,221,94,.9)"></div>
+<div style="position: absolute; left: 10px; top: 8px; display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; letter-spacing: .1em; color: #FFF; text-shadow: 0 1px 3px rgba(0,0,0,.6)"><span class="ca-blink" style="width: 8px; height: 8px; border-radius: 50%; background: #FF3B30; display: inline-block"></span>REC</div>
+<div style="position: absolute; right: 10px; top: 8px; font-size: 11px; font-weight: 600; letter-spacing: .08em; color: #FFF; text-shadow: 0 1px 3px rgba(0,0,0,.6)">4K · 30FPS</div>
+<div style="position: absolute; left: 10px; bottom: 8px; font-size: 11px; font-weight: 600; letter-spacing: .08em; color: #FFF; text-shadow: 0 1px 3px rgba(0,0,0,.6)">ISO 400 · f/1.8</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Film strip marquee -->
+<div aria-hidden="true" style="position: relative; background: #FFDD5E; color: #0A0A0A; transform: rotate(-1.5deg); margin: 0 -40px; overflow: hidden">
+<div style="height: 10px; background-image: radial-gradient(circle, #0A0A0A 3px, transparent 3.5px); background-size: 22px 10px"></div>
+<div class="ca-marquee" style="display: flex; width: max-content; padding: 14px 0; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 22px; letter-spacing: .02em; white-space: nowrap">
+<span style="padding: 0 28px">PRODUÇÃO AUDIOVISUAL</span><span>✦</span><span style="padding: 0 28px">TRÁFEGO PAGO</span><span>✦</span><span style="padding: 0 28px">SOCIAL MEDIA</span><span>✦</span><span style="padding: 0 28px">IDENTIDADE VISUAL</span><span>✦</span><span style="padding: 0 28px">LOGOTIPO</span><span>✦</span>
+<span style="padding: 0 28px">PRODUÇÃO AUDIOVISUAL</span><span>✦</span><span style="padding: 0 28px">TRÁFEGO PAGO</span><span>✦</span><span style="padding: 0 28px">SOCIAL MEDIA</span><span>✦</span><span style="padding: 0 28px">IDENTIDADE VISUAL</span><span>✦</span><span style="padding: 0 28px">LOGOTIPO</span><span>✦</span>
+</div>
+<div style="height: 10px; background-image: radial-gradient(circle, #0A0A0A 3px, transparent 3.5px); background-size: 22px 10px"></div>
+</div>
+
+<!-- Serviços -->
+<section id="servicos" style="padding: 120px 24px 96px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
+<div class="ca-reveal" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #FFDD5E">Cena 01 — Serviços</span>
+<h2 style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.1; max-width: 680px">Do logotipo ao anúncio rodando. Uma marca completa.</h2>
+</div>
+<p style="margin: 0; max-width: 380px; color: #A8A8A1; font-size: 16px; line-height: 1.6">Cada peça conversa com a outra: a identidade que você vê no logo é a mesma que aparece no vídeo, no feed e no anúncio.</p>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; align-items: start">
+<div class="ca-reveal" style="position: relative; border-radius: 20px">
+<button type="button" class="ca-card ca-shot" data-card="1" aria-expanded="false" aria-controls="servico-1" style="position: relative; width: 100%; padding: 32px 28px; background: #111; border: 1px solid #222; border-radius: 20px; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; text-align: left; color: #F5F5F2; font: inherit; cursor: pointer; overflow: hidden">
+<span style="display: flex; width: 100%; justify-content: space-between; align-items: center; font-family: Unbounded, sans-serif; font-size: 13px; color: #6E6E68"><span>01</span><span class="ca-hint" style="display: inline-flex; align-items: center; gap: 6px; font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8E8E87"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg><span class="ca-hint-text">Clique</span></span></span>
+<span class="ca-icon-ring" style="width: 64px; height: 64px; border-radius: 50%; border: 1px dashed #3A3A3A; display: flex; align-items: center; justify-content: center"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#FFDD5E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 13l5.2 3.5a.5.5 0 0 0 .8-.4V7.9a.5.5 0 0 0-.8-.4L16 11"></path><rect x="2" y="6" width="14" height="12" rx="2"></rect></svg></span>
+<span style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 22px; line-height: 1.25">Produção audiovisual</span>
+<span id="servico-1" hidden class="ca-desc" style="display: block; color: #A8A8A1; font-size: 15px; line-height: 1.6">Roteiro, captação e edição de vídeos institucionais, reels e conteúdos que prendem a atenção nos primeiros segundos.</span>
+
+
+
+</button>
+</div>
+<div class="ca-reveal" style="position: relative; border-radius: 20px">
+<button type="button" class="ca-card ca-shot" data-card="2" aria-expanded="false" aria-controls="servico-2" style="position: relative; width: 100%; padding: 32px 28px; background: #111; border: 1px solid #222; border-radius: 20px; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; text-align: left; color: #F5F5F2; font: inherit; cursor: pointer; overflow: hidden">
+<span style="display: flex; width: 100%; justify-content: space-between; align-items: center; font-family: Unbounded, sans-serif; font-size: 13px; color: #6E6E68"><span>02</span><span class="ca-hint" style="display: inline-flex; align-items: center; gap: 6px; font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8E8E87"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg><span class="ca-hint-text">Clique</span></span></span>
+<span class="ca-icon-ring" style="width: 64px; height: 64px; border-radius: 50%; border: 1px dashed #3A3A3A; display: flex; align-items: center; justify-content: center"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#FFDD5E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg></span>
+<span style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 22px; line-height: 1.25">Tráfego pago</span>
+<span id="servico-2" hidden class="ca-desc" style="display: block; color: #A8A8A1; font-size: 15px; line-height: 1.6">Campanhas no Meta Ads e Google Ads para colocar sua marca na frente de quem está pronto para comprar.</span>
+
+
+
+</button>
+</div>
+<div class="ca-reveal" style="position: relative; border-radius: 20px">
+<button type="button" class="ca-card ca-shot" data-card="3" aria-expanded="false" aria-controls="servico-3" style="position: relative; width: 100%; padding: 32px 28px; background: #111; border: 1px solid #222; border-radius: 20px; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; text-align: left; color: #F5F5F2; font: inherit; cursor: pointer; overflow: hidden">
+<span style="display: flex; width: 100%; justify-content: space-between; align-items: center; font-family: Unbounded, sans-serif; font-size: 13px; color: #6E6E68"><span>03</span><span class="ca-hint" style="display: inline-flex; align-items: center; gap: 6px; font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8E8E87"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg><span class="ca-hint-text">Clique</span></span></span>
+<span class="ca-icon-ring" style="width: 64px; height: 64px; border-radius: 50%; border: 1px dashed #3A3A3A; display: flex; align-items: center; justify-content: center"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#FFDD5E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"></rect><path d="M12 18h.01"></path><path d="M9 7h6"></path><path d="M9 11h6"></path></svg></span>
+<span style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 22px; line-height: 1.25">Social media</span>
+<span id="servico-3" hidden class="ca-desc" style="display: block; color: #A8A8A1; font-size: 15px; line-height: 1.6">Planejamento, criação e gestão de conteúdo para um perfil com cara de marca grande e constância de verdade.</span>
+
+
+
+</button>
+</div>
+<div class="ca-reveal" style="position: relative; border-radius: 20px">
+<button type="button" class="ca-card ca-shot" data-card="4" aria-expanded="false" aria-controls="servico-4" style="position: relative; width: 100%; padding: 32px 28px; background: #111; border: 1px solid #222; border-radius: 20px; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; text-align: left; color: #F5F5F2; font: inherit; cursor: pointer; overflow: hidden">
+<span style="display: flex; width: 100%; justify-content: space-between; align-items: center; font-family: Unbounded, sans-serif; font-size: 13px; color: #6E6E68"><span>04</span><span class="ca-hint" style="display: inline-flex; align-items: center; gap: 6px; font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8E8E87"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg><span class="ca-hint-text">Clique</span></span></span>
+<span class="ca-icon-ring" style="width: 64px; height: 64px; border-radius: 50%; border: 1px dashed #3A3A3A; display: flex; align-items: center; justify-content: center"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#FFDD5E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.6 7.6"></path><circle cx="11" cy="11" r="2"></circle></svg></span>
+<span style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 22px; line-height: 1.25">Logotipo e identidade visual</span>
+<span id="servico-4" hidden class="ca-desc" style="display: block; color: #A8A8A1; font-size: 15px; line-height: 1.6">Criação de logo, cores e tipografia que dão personalidade à sua marca e deixam tudo reconhecível à primeira vista.</span>
+
+
+
+</button>
+</div>
+</div>
+</section>
+
+<!-- Portfólio -->
+<section id="portfolio" style="position: relative; padding: 96px 24px; background: #070707; border-top: 1px solid #191919; border-bottom: 1px solid #191919; overflow: hidden">
+<div aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; overflow: hidden; opacity: .06">
+<div class="ca-marquee-rev" style="display: flex; width: max-content; font-family: Unbounded, sans-serif; font-weight: 800; font-size: 160px; line-height: 1; white-space: nowrap; color: #FFDD5E">
+<span style="padding-right: 80px">AÇÃO · CORTA · GRAVANDO ·</span><span style="padding-right: 80px">AÇÃO · CORTA · GRAVANDO ·</span>
+</div>
+</div>
+<div style="position: relative; max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
+<div class="ca-reveal" style="display: flex; flex-direction: column; gap: 14px; align-items: center; text-align: center">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #FFDD5E">Cena 02 — Portfólio</span>
+<h2 class="ca-zoomtext" style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.1">Aperte o play.</h2>
+<p style="margin: 0; max-width: 520px; color: #A8A8A1; font-size: 16px; line-height: 1.6">Alguns dos conteúdos produzidos para clientes. Toque no vídeo para assistir com som.</p>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 24px; justify-items: center">
+
+<figure class="ca-video-frame ca-reveal" style="margin: 0; width: 100%; max-width: 340px; display: flex; flex-direction: column; gap: 14px">
+<div style="position: relative; padding: 14px 10px; background: #141414; border-radius: 18px; border: 1px solid #262626">
+<div aria-hidden="true" style="height: 8px; margin-bottom: 8px; background-image: radial-gradient(circle, #2E2E2E 3px, transparent 3.5px); background-size: 18px 8px"></div>
+<video src="assets/video-9214.mp4" poster="assets/poster-9214.jpg" controls playsinline preload="metadata" style="width: 100%; aspect-ratio: 9 / 16; object-fit: contain; display: block; border-radius: 10px; background: #000"></video>
+<div aria-hidden="true" style="height: 8px; margin-top: 8px; background-image: radial-gradient(circle, #2E2E2E 3px, transparent 3.5px); background-size: 18px 8px"></div>
+</div>
+<figcaption style="display: flex; justify-content: space-between; font-size: 13px; color: #8E8E87"><span style="font-weight: 600; color: #F5F5F2">Take 01</span><span>Reels · Saúde</span></figcaption>
+</figure>
+
+<figure class="ca-video-frame ca-reveal" style="margin: 0; width: 100%; max-width: 340px; display: flex; flex-direction: column; gap: 14px">
+<div style="position: relative; padding: 14px 10px; background: #141414; border-radius: 18px; border: 1px solid #262626">
+<div aria-hidden="true" style="height: 8px; margin-bottom: 8px; background-image: radial-gradient(circle, #2E2E2E 3px, transparent 3.5px); background-size: 18px 8px"></div>
+<video src="assets/video-9215.mp4" poster="assets/poster-9215.jpg" controls playsinline preload="metadata" style="width: 100%; aspect-ratio: 9 / 16; object-fit: contain; display: block; border-radius: 10px; background: #000"></video>
+<div aria-hidden="true" style="height: 8px; margin-top: 8px; background-image: radial-gradient(circle, #2E2E2E 3px, transparent 3.5px); background-size: 18px 8px"></div>
+</div>
+<figcaption style="display: flex; justify-content: space-between; font-size: 13px; color: #8E8E87"><span style="font-weight: 600; color: #F5F5F2">Take 02</span><span>Reels · Clínica</span></figcaption>
+</figure>
+
+<figure class="ca-video-frame ca-reveal" style="margin: 0; width: 100%; max-width: 340px; display: flex; flex-direction: column; gap: 14px">
+<div style="position: relative; padding: 14px 10px; background: #141414; border-radius: 18px; border: 1px solid #262626">
+<div aria-hidden="true" style="height: 8px; margin-bottom: 8px; background-image: radial-gradient(circle, #2E2E2E 3px, transparent 3.5px); background-size: 18px 8px"></div>
+<video src="assets/video-9216.mp4" poster="assets/poster-9216.jpg" controls playsinline preload="metadata" style="width: 100%; aspect-ratio: 9 / 16; object-fit: contain; display: block; border-radius: 10px; background: #000"></video>
+<div aria-hidden="true" style="height: 8px; margin-top: 8px; background-image: radial-gradient(circle, #2E2E2E 3px, transparent 3.5px); background-size: 18px 8px"></div>
+</div>
+<figcaption style="display: flex; justify-content: space-between; font-size: 13px; color: #8E8E87"><span style="font-weight: 600; color: #F5F5F2">Take 03</span><span>Reels · Institucional</span></figcaption>
+</figure>
+
+<figure class="ca-video-frame ca-reveal" style="margin: 0; width: 100%; max-width: 340px; display: flex; flex-direction: column; gap: 14px">
+<div style="position: relative; padding: 14px 10px; background: #141414; border-radius: 18px; border: 1px solid #262626">
+<div aria-hidden="true" style="height: 8px; margin-bottom: 8px; background-image: radial-gradient(circle, #2E2E2E 3px, transparent 3.5px); background-size: 18px 8px"></div>
+<video src="assets/video-chacara.mp4" poster="assets/poster-chacara.jpg" controls playsinline preload="metadata" style="width: 100%; aspect-ratio: 9 / 16; object-fit: contain; display: block; border-radius: 10px; background: #000"></video>
+<div aria-hidden="true" style="height: 8px; margin-top: 8px; background-image: radial-gradient(circle, #2E2E2E 3px, transparent 3.5px); background-size: 18px 8px"></div>
+</div>
+<figcaption style="display: flex; justify-content: space-between; font-size: 13px; color: #8E8E87"><span style="font-weight: 600; color: #F5F5F2">Take 04</span><span>Imóveis · Chácara</span></figcaption>
+</figure>
+
+<figure class="ca-video-frame ca-reveal" style="margin: 0; width: 100%; max-width: 340px; display: flex; flex-direction: column; gap: 14px">
+<div style="position: relative; padding: 14px 10px; background: #141414; border-radius: 18px; border: 1px solid #262626">
+<div aria-hidden="true" style="height: 8px; margin-bottom: 8px; background-image: radial-gradient(circle, #2E2E2E 3px, transparent 3.5px); background-size: 18px 8px"></div>
+<video src="assets/video-5.mp4" poster="assets/poster-5.jpg" controls playsinline preload="metadata" style="width: 100%; aspect-ratio: 9 / 16; object-fit: contain; display: block; border-radius: 10px; background: #000"></video>
+<div aria-hidden="true" style="height: 8px; margin-top: 8px; background-image: radial-gradient(circle, #2E2E2E 3px, transparent 3.5px); background-size: 18px 8px"></div>
+</div>
+<figcaption style="display: flex; justify-content: space-between; font-size: 13px; color: #8E8E87"><span style="font-weight: 600; color: #F5F5F2">Take 05</span><span>Imóveis · Residencial</span></figcaption>
+</figure>
+
+</div>
+</div>
+</section>
+
+<!-- Sobre -->
+<section id="sobre" style="padding: 120px 24px">
+<div style="max-width: 1140px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 64px">
+<div class="ca-reveal" style="flex: 1 1 320px; display: flex; justify-content: center">
+<div style="position: relative; width: 400px; max-width: 100%; aspect-ratio: 1 / 1">
+<svg class="ca-spin-fast" aria-hidden="true" viewBox="0 0 200 200" style="position: absolute; inset: -34px; width: calc(100% + 68px); height: calc(100% + 68px)" fill="none"><circle cx="100" cy="100" r="96" stroke="#FFDD5E" stroke-width="1" stroke-dasharray="2 6"></circle></svg>
+<div style="position: relative; width: 100%; height: 100%; border-radius: 24px; overflow: hidden">
+<img class="ca-zoomfocus" src="assets/kauan.jpg" alt="Kauan Araújo, fundador da Criar Araújo" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<span class="ca-af" aria-hidden="true" style="position: absolute; left: 50%; top: 40%; width: 90px; height: 90px; margin: -45px 0 0 -45px; border: 2px solid #FFDD5E; border-radius: 6px"></span>
+<span class="ca-af-label" aria-hidden="true" style="position: absolute; left: 18px; top: 16px; padding: 4px 8px; background: rgba(0,0,0,.6); border-radius: 6px; font-size: 11px; font-weight: 700; letter-spacing: .1em; color: #FFDD5E">AF · FOCO</span>
+</div>
+<div aria-hidden="true" style="position: absolute; inset: 16px; pointer-events: none">
+<div style="position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-left: 2px solid #FFDD5E; border-top: 2px solid #FFDD5E"></div>
+<div style="position: absolute; right: 0; top: 0; width: 30px; height: 30px; border-right: 2px solid #FFDD5E; border-top: 2px solid #FFDD5E"></div>
+<div style="position: absolute; left: 0; bottom: 0; width: 30px; height: 30px; border-left: 2px solid #FFDD5E; border-bottom: 2px solid #FFDD5E"></div>
+<div style="position: absolute; right: 0; bottom: 0; width: 30px; height: 30px; border-right: 2px solid #FFDD5E; border-bottom: 2px solid #FFDD5E"></div>
+</div>
+<div style="position: absolute; right: -14px; bottom: 28px; padding: 14px 18px; background: #FFDD5E; color: #0A0A0A; border-radius: 14px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-family: Unbounded, sans-serif; font-weight: 800; font-size: 30px; line-height: 1">+6 anos</span>
+<span style="font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase">atrás das câmeras</span>
+</div>
+</div>
+</div>
+
+<div class="ca-reveal" style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #FFDD5E">Cena 03 — Quem está por trás</span>
+<h2 style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.1">Kauan <span style="font-family: 'Great Vibes', cursive; font-weight: 400; font-size: 1.35em; color: #FFDD5E">Araújo</span></h2>
+<p style="margin: 0; font-size: 20px; line-height: 1.55; color: #F5F5F2; font-weight: 500">Há mais de 6 anos transformando ideias em imagem — e imagem em cliente.</p>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #A8A8A1">Comecei pelo audiovisual e fui além da câmera: hoje acompanho a marca do primeiro traço do logotipo até o anúncio que traz venda. Social media, tráfego pago e produção audiovisual com uma só visão, para que tudo o que sua empresa mostra fale a mesma língua.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<span style="padding: 8px 14px; border: 1px solid #2E2E2E; border-radius: 999px; font-size: 13px; color: #D9D9D4">Logotipo</span>
+<span style="padding: 8px 14px; border: 1px solid #2E2E2E; border-radius: 999px; font-size: 13px; color: #D9D9D4">Social media</span>
+<span style="padding: 8px 14px; border: 1px solid #2E2E2E; border-radius: 999px; font-size: 13px; color: #D9D9D4">Tráfego pago</span>
+<span style="padding: 8px 14px; border: 1px solid #2E2E2E; border-radius: 999px; font-size: 13px; color: #D9D9D4">Produção audiovisual</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Processo -->
+<section style="padding: 0 24px 120px">
+<div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2px; background: #1E1E1E; border: 1px solid #1E1E1E; border-radius: 20px; overflow: hidden">
+<div class="ca-reveal" style="padding: 36px 30px; background: #0E0E0E; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 14px; color: #FFDD5E">CLAQUETE 1</span>
+<h3 style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 20px">Briefing</h3>
+<p style="margin: 0; color: #A8A8A1; font-size: 15px; line-height: 1.6">Entendemos seu negócio, seu público e onde você quer chegar.</p>
+</div>
+<div class="ca-reveal" style="padding: 36px 30px; background: #0E0E0E; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 14px; color: #FFDD5E">CLAQUETE 2</span>
+<h3 style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 20px">Criação e captação</h3>
+<p style="margin: 0; color: #A8A8A1; font-size: 15px; line-height: 1.6">Roteiro, identidade, gravação e edição com padrão profissional.</p>
+</div>
+<div class="ca-reveal" style="padding: 36px 30px; background: #0E0E0E; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 14px; color: #FFDD5E">CLAQUETE 3</span>
+<h3 style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 20px">No ar e rodando</h3>
+<p style="margin: 0; color: #A8A8A1; font-size: 15px; line-height: 1.6">Publicação, anúncios e acompanhamento para o conteúdo virar resultado.</p>
+</div>
+</div>
+</section>
+
+<!-- Contato / Formulário -->
+<section id="contato" style="position: relative; padding: 112px 24px; background: #FFDD5E; color: #0A0A0A; overflow: hidden">
+<svg class="ca-spin" aria-hidden="true" viewBox="0 0 200 200" style="position: absolute; left: -200px; bottom: -220px; width: 560px; height: 560px; opacity: .12" fill="none" stroke="#0A0A0A" stroke-width="1.4"><circle cx="100" cy="100" r="96"></circle><circle cx="100" cy="100" r="40"></circle><path d="M100 4 L134.6 63.2"></path><path d="M183.1 52 L134.6 63.2"></path><path d="M183.1 148 L140 100"></path><path d="M100 196 L134.6 136.8"></path><path d="M16.9 148 L65.4 136.8"></path><path d="M16.9 52 L60 100"></path></svg>
+<div style="position: relative; max-width: 1140px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start">
+<div class="ca-reveal" style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase">Cena final — Contato</span>
+<h2 style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 800; font-size: clamp(32px, 4vw, 54px); line-height: 1.05">Bora gravar o próximo capítulo da sua marca?</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #2B2610">Preencha o formulário e sua mensagem chega pronta no meu WhatsApp. Respondo pessoalmente.</p>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; font-weight: 600">
+<a href="https://wa.me/5519993392003" target="_blank" rel="noopener" style="color: #0A0A0A; text-decoration: none; display: flex; align-items: center; gap: 10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-3.8A9 9 0 1 1 7.5 20L3 21"></path></svg>(19) 99339-2003</a>
+<span style="display: flex; align-items: center; gap: 10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Campinas-SP</span>
+</div>
+</div>
+
+<form id="ca-form" class="ca-reveal" novalidate style="flex: 999 1 480px; min-width: 0; padding: 36px; background: #0A0A0A; color: #F5F5F2; border-radius: 24px; display: flex; flex-direction: column; gap: 20px; box-shadow: 0 30px 60px rgba(0,0,0,.25)">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 600; color: #CFCFC8">Seu nome
+<input class="ca-input" type="text" name="nome" autocomplete="name" placeholder="Como posso te chamar?" id="f-nome" style="min-height: 48px; padding: 0 16px; background: #151515; border: 1px solid #2E2E2E; border-radius: 12px; color: #F5F5F2; font: 400 15px Inter, sans-serif"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 600; color: #CFCFC8">Empresa / segmento
+<input class="ca-input" type="text" name="empresa" autocomplete="organization" placeholder="Ex.: clínica, loja, restaurante" id="f-empresa" style="min-height: 48px; padding: 0 16px; background: #151515; border: 1px solid #2E2E2E; border-radius: 12px; color: #F5F5F2; font: 400 15px Inter, sans-serif"></label>
+</div>
+
+<fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 10px">
+<legend style="padding: 0; margin-bottom: 10px; font-size: 13px; font-weight: 600; color: #CFCFC8">Quais serviços você procura?</legend>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<button type="button" class="ca-pill" aria-pressed="false">Produção audiovisual</button>
+<button type="button" class="ca-pill" aria-pressed="false">Tráfego pago</button>
+<button type="button" class="ca-pill" aria-pressed="false">Social media</button>
+<button type="button" class="ca-pill" aria-pressed="false">Logotipo / identidade visual</button>
+<button type="button" class="ca-pill" aria-pressed="false">Não sei ainda, quero orientação</button>
+</div>
+</fieldset>
+
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 600; color: #CFCFC8">Conte um pouco sobre o projeto
+<textarea class="ca-input" name="mensagem" rows="4" placeholder="O que você precisa, prazo, ideias…" id="f-msg" style="padding: 14px 16px; background: #151515; border: 1px solid #2E2E2E; border-radius: 12px; color: #F5F5F2; font: 400 15px/1.5 Inter, sans-serif; resize: vertical"></textarea></label>
+
+<p id="f-erro" role="alert" hidden style="margin: 0; font-size: 14px; color: #FF8A80">Coloque seu nome e escolha pelo menos um serviço.</p>
+
+<a class="ca-btn" id="f-enviar" href="https://wa.me/5519993392003" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 56px; padding: 0 24px; background: #25D366; color: #06210F; border-radius: 14px; font-weight: 700; font-size: 16px; text-decoration: none">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-3.8A9 9 0 1 1 7.5 20L3 21"></path><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path></svg>
+Enviar pelo WhatsApp</a>
+<p style="margin: 0; font-size: 12px; color: #8E8E87; text-align: center">Ao clicar, o WhatsApp abre com sua mensagem já escrita. É só apertar enviar.</p>
+</form>
+</div>
+</section>
+
+<!-- Footer -->
+<footer style="padding: 48px 24px 64px; background: #000; border-top: 1px solid #1A1A1A">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px">
+<img src="assets/logo-transparente.png" alt="Criar Araújo" style="height: 72px; width: auto; display: block">
+<p style="margin: 0; font-size: 14px; color: #8E8E87">Produção audiovisual · Tráfego pago · Social media · Identidade visual</p>
+<p style="margin: 0; font-size: 14px; color: #8E8E87">Campinas-SP · <a href="https://wa.me/5519993392003" target="_blank" rel="noopener">(19) 99339-2003</a></p>
+</div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a class="ca-pulse" href="https://wa.me/5519993392003" target="_blank" rel="noopener" aria-label="Falar no WhatsApp" style="position: fixed; right: 22px; bottom: 22px; z-index: 50; width: 60px; height: 60px; border-radius: 50%; background: #25D366; color: #06210F; display: flex; align-items: center; justify-content: center">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-3.8A9 9 0 1 1 7.5 20L3 21"></path><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path></svg>
+</a>
+
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Cards: foto ao abrir, lente fechando ao fechar
+  document.querySelectorAll('[data-card]').forEach(function(btn){
+    var n = btn.getAttribute('data-card');
+    var desc = document.getElementById('servico-' + n);
+    var hint = btn.querySelector('.ca-hint-text');
+    var busy = false;
+    function overlay(html, ms){
+      var o = document.createElement('span');
+      o.setAttribute('aria-hidden','true');
+      o.style.cssText = 'position:absolute;inset:0;pointer-events:none;overflow:hidden;border-radius:20px';
+      o.innerHTML = html; btn.appendChild(o);
+      setTimeout(function(){ o.remove(); }, ms);
+    }
+    btn.addEventListener('click', function(){
+      if (busy) return;
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      if (!open){
+        btn.setAttribute('aria-expanded','true'); hint.textContent = 'Fechar';
+        desc.className = 'ca-desc'; desc.hidden = false;
+        if (!reduce) overlay('<span class="ca-snap-top" style="position:absolute;left:0;top:0;width:100%;height:50%;background:#000;border-bottom:2px solid #FFDD5E"></span><span class="ca-snap-bot" style="position:absolute;left:0;bottom:0;width:100%;height:50%;background:#000;border-top:2px solid #FFDD5E"></span><span class="ca-snap-flash" style="position:absolute;inset:0;background:#FFF"></span>', 800);
+      } else {
+        if (reduce){ desc.hidden = true; btn.setAttribute('aria-expanded','false'); hint.textContent = 'Clique'; return; }
+        busy = true;
+        desc.className = 'ca-desc-out';
+        overlay('<span class="ca-iris" style="position:absolute;left:50%;top:50%;width:260%;aspect-ratio:1/1;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 1200px #000;border:2px solid #FFDD5E"></span><span class="ca-iris-dot" style="position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:#FF3B30"></span>', 920);
+        setTimeout(function(){ desc.hidden = true; btn.setAttribute('aria-expanded','false'); hint.textContent = 'Clique'; }, 540);
+        setTimeout(function(){ busy = false; }, 920);
+      }
+    });
+  });
+
+  // Formulário -> WhatsApp
+  var pills = document.querySelectorAll('.ca-pill');
+  pills.forEach(function(p){ p.addEventListener('click', function(){
+    p.setAttribute('aria-pressed', p.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    document.getElementById('f-erro').hidden = true;
+  }); });
+  function buildUrl(){
+    var nome = document.getElementById('f-nome').value.trim();
+    var emp = document.getElementById('f-empresa').value.trim();
+    var msg = document.getElementById('f-msg').value.trim();
+    var serv = Array.prototype.filter.call(pills, function(p){ return p.getAttribute('aria-pressed') === 'true'; }).map(function(p){ return p.textContent; });
+    var lines = ['Olá, Kauan! Vim pelo site da Criar Araújo.'];
+    if (nome) lines.push('*Nome:* ' + nome);
+    if (emp) lines.push('*Empresa/segmento:* ' + emp);
+    if (serv.length) lines.push('*Serviços de interesse:* ' + serv.join(', '));
+    if (msg) lines.push('*Sobre o projeto:* ' + msg);
+    return { ok: nome.length > 0 && serv.length > 0, url: 'https://wa.me/5519993392003?text=' + encodeURIComponent(lines.join('\n')) };
+  }
+  function send(e){
+    e.preventDefault();
+    var r = buildUrl();
+    if (!r.ok){ document.getElementById('f-erro').hidden = false; return; }
+    window.open(r.url, '_blank', 'noopener');
+  }
+  document.getElementById('f-enviar').addEventListener('click', send);
+  document.getElementById('ca-form').addEventListener('submit', send);
+  document.getElementById('f-nome').addEventListener('input', function(){ document.getElementById('f-erro').hidden = true; });
+})();
+</script>
+</body>
+</html>
