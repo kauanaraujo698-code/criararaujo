@@ -95,7 +95,20 @@ html{scroll-behavior:smooth}
 .ca-pill{min-height:44px;padding:0 16px;border-radius:999px;font:600 14px Inter,sans-serif;cursor:pointer;transition:all .2s ease;background:transparent;color:#D9D9D4;border:1px solid #3A3A3A}
 .ca-pill[aria-pressed="true"]{background:#FFDD5E;color:#0A0A0A;border-color:#FFDD5E}
 [hidden]{display:none !important}
-.pf-stage{position:relative;height:clamp(320px,46vw,560px);border-radius:28px;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#1b1a14 0%,#0b0b0b 55%,#070707 100%);transition:height .9s cubic-bezier(.77,0,.18,1),opacity .6s ease,margin .9s ease}
+.cam-scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;perspective:1200px;cursor:pointer}
+.cam-glow{position:absolute;left:50%;top:50%;width:min(70%,620px);aspect-ratio:1/1;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,221,94,.16) 0%,rgba(255,221,94,.05) 35%,rgba(0,0,0,0) 65%);animation:cam-glow 6s ease-in-out infinite;pointer-events:none}
+@keyframes cam-glow{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.08)}}
+.cam-tilt{position:relative;height:108%;transform-style:preserve-3d;transition:transform .25s ease-out;animation:cam-float 5.5s ease-in-out infinite}
+@keyframes cam-float{0%,100%{translate:0 -10px;rotate:-2deg}50%{translate:0 12px;rotate:1.5deg}}
+.cam-img{height:100%;width:auto;display:block;-webkit-mask-image:radial-gradient(ellipse 62% 58% at 50% 52%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 62% 58% at 50% 52%,#000 62%,transparent 100%);filter:contrast(1.1) brightness(1.45);transform-origin:57% 59%;transition:transform 1.3s cubic-bezier(.7,0,.25,1),filter 1.3s ease}
+.cam-shadow{position:absolute;left:50%;bottom:4%;width:38%;height:22px;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(255,221,94,.12),rgba(0,0,0,0) 70%);animation:cam-shadow 5.5s ease-in-out infinite;pointer-events:none}
+@keyframes cam-shadow{0%,100%{opacity:.9;scale:1}50%{opacity:.5;scale:.85}}
+.cam-scene.cam-diving .cam-tilt{animation:none;transform:none !important}
+.cam-scene.cam-diving .cam-img{transform:scale(9) rotate(-8deg);filter:blur(3px) brightness(.4)}
+.cam-scene.cam-diving .cam-glow{opacity:0;transition:opacity .4s}
+@media (prefers-reduced-motion: reduce){.cam-tilt,.cam-glow,.cam-shadow{animation:none}}
+
+.pf-stage{position:relative;height:clamp(320px,46vw,560px);border-radius:28px;overflow:hidden;background:#020202;transition:height .9s cubic-bezier(.77,0,.18,1),opacity .6s ease,margin .9s ease}
 .pf-stage.pf-gone{height:0;opacity:0;margin-top:-48px}
 .pf-play{display:inline-flex;align-items:center;gap:14px;min-height:60px;padding:0 30px 0 10px;background:#FFDD5E;color:#0A0A0A;border:0;border-radius:999px;font:800 17px Unbounded,sans-serif;letter-spacing:.02em;cursor:pointer}
 .pf-play-icon{width:44px;height:44px;border-radius:50%;background:#0A0A0A;color:#FFDD5E;display:flex;align-items:center;justify-content:center;animation:ca-pulse-y 1.8s ease-out infinite}
@@ -264,7 +277,13 @@ html{scroll-behavior:smooth}
 </div>
 
 <div id="pf-stage" class="pf-stage">
-<canvas id="cam3d" aria-hidden="true" style="width: 100%; height: 100%; display: block; cursor: pointer"></canvas>
+<div id="cam-scene" class="cam-scene">
+<div class="cam-glow" aria-hidden="true"></div>
+<div id="cam-tilt" class="cam-tilt">
+<img id="cam-img" class="cam-img" src="assets/camera.jpg" alt="Câmera fotográfica — clique para ver o portfólio">
+</div>
+<div class="cam-shadow" aria-hidden="true"></div>
+</div>
 <div id="pf-flash" aria-hidden="true" style="position: absolute; inset: 0; background: #FFF; opacity: 0; pointer-events: none"></div>
 <div aria-hidden="true" style="position: absolute; inset: 18px; pointer-events: none">
 <div style="position: absolute; left: 0; top: 0; width: 34px; height: 34px; border-left: 2px solid rgba(255,221,94,.6); border-top: 2px solid rgba(255,221,94,.6)"></div>
@@ -518,30 +537,43 @@ Enviar pelo WhatsApp</a>
   document.getElementById('f-nome').addEventListener('input', function(){ document.getElementById('f-erro').hidden = true; });
 })();
 </script>
-<script type="module">
-import { initCamera3D } from './assets/js/camera3d.js';
-const stage = document.getElementById('pf-stage');
-const btn = document.getElementById('pf-play');
-const vids = document.getElementById('portfolio-videos');
-const flash = document.getElementById('pf-flash');
-let ctl = null, done = false;
-function open(){
-  if (done) return; done = true;
-  flash.style.animation = 'pf-flash .7s ease-out forwards';
-  setTimeout(() => {
+<script>
+(function(){
+  var stage = document.getElementById('pf-stage');
+  var scene = document.getElementById('cam-scene');
+  var tilt = document.getElementById('cam-tilt');
+  var btn = document.getElementById('pf-play');
+  var vids = document.getElementById('portfolio-videos');
+  var flash = document.getElementById('pf-flash');
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var done = false;
+  // inclinação 3D seguindo o mouse
+  stage.addEventListener('pointermove', function(e){
+    if (done || reduce) return;
+    var r = stage.getBoundingClientRect();
+    var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+    tilt.style.transform = 'rotateY(' + (x * 22) + 'deg) rotateX(' + (-y * 16) + 'deg) scale(1.03)';
+  });
+  stage.addEventListener('pointerleave', function(){ tilt.style.transform = ''; });
+  function reveal(){
     stage.classList.add('pf-gone');
     document.getElementById('pf-btn-wrap').classList.add('pf-gone');
     document.getElementById('pf-sub').textContent = 'Alguns dos conteúdos produzidos para clientes. Toque no vídeo para assistir com som.';
     vids.classList.add('pf-open'); vids.setAttribute('aria-hidden','false');
     btn.setAttribute('aria-expanded','true');
-    if (ctl) ctl.stop();
-    setTimeout(() => document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
-  }, 180);
-}
-try { ctl = initCamera3D({ canvas: document.getElementById('cam3d'), stage, onOpen: open }); }
-catch (e) { console.error(e); ctl = { play: open, stop(){} }; }
-btn.addEventListener('click', () => ctl.play());
-document.getElementById('cam3d').addEventListener('click', () => ctl.play());
+    setTimeout(function(){ document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 300);
+  }
+  function play(){
+    if (done) return; done = true;
+    if (reduce) { reveal(); return; }
+    tilt.style.transform = '';
+    scene.classList.add('cam-diving');           // mergulha na lente
+    setTimeout(function(){ flash.style.animation = 'pf-flash .7s ease-out forwards'; }, 1050);
+    setTimeout(reveal, 1250);
+  }
+  btn.addEventListener('click', play);
+  scene.addEventListener('click', play);
+})();
 </script>
 </body>
 </html>
