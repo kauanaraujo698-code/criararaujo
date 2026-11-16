@@ -95,6 +95,26 @@ html{scroll-behavior:smooth}
 .ca-pill{min-height:44px;padding:0 16px;border-radius:999px;font:600 14px Inter,sans-serif;cursor:pointer;transition:all .2s ease;background:transparent;color:#D9D9D4;border:1px solid #3A3A3A}
 .ca-pill[aria-pressed="true"]{background:#FFDD5E;color:#0A0A0A;border-color:#FFDD5E}
 [hidden]{display:none !important}
+.pf-stage{position:relative;height:clamp(320px,46vw,560px);border-radius:28px;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#1b1a14 0%,#0b0b0b 55%,#070707 100%);transition:height .9s cubic-bezier(.77,0,.18,1),opacity .6s ease,margin .9s ease}
+.pf-stage.pf-gone{height:0;opacity:0;margin-top:-48px}
+.pf-play{display:inline-flex;align-items:center;gap:14px;min-height:60px;padding:0 30px 0 10px;background:#FFDD5E;color:#0A0A0A;border:0;border-radius:999px;font:800 17px Unbounded,sans-serif;letter-spacing:.02em;cursor:pointer}
+.pf-play-icon{width:44px;height:44px;border-radius:50%;background:#0A0A0A;color:#FFDD5E;display:flex;align-items:center;justify-content:center;animation:ca-pulse-y 1.8s ease-out infinite}
+@keyframes ca-pulse-y{0%{box-shadow:0 0 0 0 rgba(10,10,10,.45)}100%{box-shadow:0 0 0 14px rgba(10,10,10,0)}}
+#pf-btn-wrap.pf-gone{display:none !important}
+.pf-videos{display:grid;grid-template-rows:0fr;transition:grid-template-rows 1s cubic-bezier(.77,0,.18,1)}
+.pf-videos-inner{overflow:hidden;min-height:0}
+.pf-videos.pf-open{grid-template-rows:1fr}
+.pf-videos .ca-video-frame{opacity:0;transform:translateY(60px) scale(.94);filter:blur(8px);animation:none}
+.pf-videos.pf-open .ca-video-frame{animation:pf-in .9s cubic-bezier(.2,.8,.2,1) forwards}
+.pf-videos.pf-open .ca-video-frame:nth-child(1){animation-delay:.25s}
+.pf-videos.pf-open .ca-video-frame:nth-child(2){animation-delay:.38s}
+.pf-videos.pf-open .ca-video-frame:nth-child(3){animation-delay:.51s}
+.pf-videos.pf-open .ca-video-frame:nth-child(4){animation-delay:.64s}
+.pf-videos.pf-open .ca-video-frame:nth-child(5){animation-delay:.77s}
+@keyframes pf-in{to{opacity:1;transform:none;filter:none}}
+@keyframes pf-flash{0%{opacity:0}15%{opacity:1}100%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.pf-videos.pf-open .ca-video-frame{animation:none;opacity:1;transform:none;filter:none}.pf-play-icon{animation:none}}
+
 </style>
 </head>
 <body>
@@ -239,11 +259,29 @@ html{scroll-behavior:smooth}
 <div style="position: relative; max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
 <div class="ca-reveal" style="display: flex; flex-direction: column; gap: 14px; align-items: center; text-align: center">
 <span style="font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #FFDD5E">Cena 02 — Portfólio</span>
-<h2 class="ca-zoomtext" style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.1">Aperte o play.</h2>
-<p style="margin: 0; max-width: 520px; color: #A8A8A1; font-size: 16px; line-height: 1.6">Alguns dos conteúdos produzidos para clientes. Toque no vídeo para assistir com som.</p>
+<h2 class="ca-zoomtext" style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 800; font-size: clamp(38px, 6vw, 84px); line-height: 1; letter-spacing: -.01em">APERTE O <span style="color: #FFDD5E">PLAY</span></h2>
+<p id="pf-sub" style="margin: 0; max-width: 520px; color: #A8A8A1; font-size: 16px; line-height: 1.6">Clique na câmera ou no botão para revelar os trabalhos.</p>
 </div>
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 24px; justify-items: center">
+<div id="pf-stage" class="pf-stage">
+<canvas id="cam3d" aria-hidden="true" style="width: 100%; height: 100%; display: block; cursor: pointer"></canvas>
+<div id="pf-flash" aria-hidden="true" style="position: absolute; inset: 0; background: #FFF; opacity: 0; pointer-events: none"></div>
+<div aria-hidden="true" style="position: absolute; inset: 18px; pointer-events: none">
+<div style="position: absolute; left: 0; top: 0; width: 34px; height: 34px; border-left: 2px solid rgba(255,221,94,.6); border-top: 2px solid rgba(255,221,94,.6)"></div>
+<div style="position: absolute; right: 0; top: 0; width: 34px; height: 34px; border-right: 2px solid rgba(255,221,94,.6); border-top: 2px solid rgba(255,221,94,.6)"></div>
+<div style="position: absolute; left: 0; bottom: 0; width: 34px; height: 34px; border-left: 2px solid rgba(255,221,94,.6); border-bottom: 2px solid rgba(255,221,94,.6)"></div>
+<div style="position: absolute; right: 0; bottom: 0; width: 34px; height: 34px; border-right: 2px solid rgba(255,221,94,.6); border-bottom: 2px solid rgba(255,221,94,.6)"></div>
+</div>
+</div>
+
+<div id="pf-btn-wrap" style="display: flex; justify-content: center">
+<button id="pf-play" type="button" class="ca-btn pf-play" aria-expanded="false" aria-controls="portfolio-videos">
+<span class="pf-play-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"></path></svg></span>
+Aperte o play</button>
+</div>
+
+<div id="portfolio-videos" class="pf-videos" aria-hidden="true"><div class="pf-videos-inner">
+<div class="pf-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 24px; justify-items: center">
 
 <figure class="ca-video-frame ca-reveal" style="margin: 0; width: 100%; max-width: 340px; display: flex; flex-direction: column; gap: 14px">
 <div style="position: relative; padding: 14px 10px; background: #141414; border-radius: 18px; border: 1px solid #262626">
@@ -291,6 +329,7 @@ html{scroll-behavior:smooth}
 </figure>
 
 </div>
+</div></div>
 </div>
 </section>
 
@@ -478,6 +517,31 @@ Enviar pelo WhatsApp</a>
   document.getElementById('ca-form').addEventListener('submit', send);
   document.getElementById('f-nome').addEventListener('input', function(){ document.getElementById('f-erro').hidden = true; });
 })();
+</script>
+<script type="module">
+import { initCamera3D } from './assets/js/camera3d.js';
+const stage = document.getElementById('pf-stage');
+const btn = document.getElementById('pf-play');
+const vids = document.getElementById('portfolio-videos');
+const flash = document.getElementById('pf-flash');
+let ctl = null, done = false;
+function open(){
+  if (done) return; done = true;
+  flash.style.animation = 'pf-flash .7s ease-out forwards';
+  setTimeout(() => {
+    stage.classList.add('pf-gone');
+    document.getElementById('pf-btn-wrap').classList.add('pf-gone');
+    document.getElementById('pf-sub').textContent = 'Alguns dos conteúdos produzidos para clientes. Toque no vídeo para assistir com som.';
+    vids.classList.add('pf-open'); vids.setAttribute('aria-hidden','false');
+    btn.setAttribute('aria-expanded','true');
+    if (ctl) ctl.stop();
+    setTimeout(() => document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
+  }, 180);
+}
+try { ctl = initCamera3D({ canvas: document.getElementById('cam3d'), stage, onOpen: open }); }
+catch (e) { console.error(e); ctl = { play: open, stop(){} }; }
+btn.addEventListener('click', () => ctl.play());
+document.getElementById('cam3d').addEventListener('click', () => ctl.play());
 </script>
 </body>
 </html>
