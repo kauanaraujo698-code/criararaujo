@@ -98,9 +98,9 @@ html{scroll-behavior:smooth}
 .cam-scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;perspective:1200px;cursor:pointer}
 .cam-glow{position:absolute;left:50%;top:50%;width:min(70%,620px);aspect-ratio:1/1;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,221,94,.16) 0%,rgba(255,221,94,.05) 35%,rgba(0,0,0,0) 65%);animation:cam-glow 6s ease-in-out infinite;pointer-events:none}
 @keyframes cam-glow{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.08)}}
-.cam-tilt{position:relative;height:108%;transform-style:preserve-3d;transition:transform .25s ease-out;animation:cam-float 5.5s ease-in-out infinite}
+.cam-tilt{position:relative;height:78%;transform-style:preserve-3d;transition:transform .25s ease-out;animation:cam-float 5.5s ease-in-out infinite}
 @keyframes cam-float{0%,100%{translate:0 -10px;rotate:-2deg}50%{translate:0 12px;rotate:1.5deg}}
-.cam-img{height:100%;width:auto;display:block;-webkit-mask-image:radial-gradient(ellipse 62% 58% at 50% 52%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 62% 58% at 50% 52%,#000 62%,transparent 100%);filter:contrast(1.1) brightness(1.45);transform-origin:57% 59%;transition:transform 1.3s cubic-bezier(.7,0,.25,1),filter 1.3s ease}
+.cam-img{height:100%;width:auto;display:block;filter:brightness(1.35) contrast(1.08) drop-shadow(0 0 28px rgba(255,221,94,.18)) drop-shadow(0 30px 40px rgba(0,0,0,.8));transform-origin:62.9% 64.1%;transition:transform 1.3s cubic-bezier(.7,0,.25,1),filter 1.3s ease}
 .cam-shadow{position:absolute;left:50%;bottom:4%;width:38%;height:22px;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(255,221,94,.12),rgba(0,0,0,0) 70%);animation:cam-shadow 5.5s ease-in-out infinite;pointer-events:none}
 @keyframes cam-shadow{0%,100%{opacity:.9;scale:1}50%{opacity:.5;scale:.85}}
 .cam-scene.cam-diving .cam-tilt{animation:none;transform:none !important}
@@ -283,7 +283,7 @@ html{scroll-behavior:smooth}
 <div id="cam-scene" class="cam-scene">
 <div class="cam-glow" aria-hidden="true"></div>
 <div id="cam-tilt" class="cam-tilt">
-<img id="cam-img" class="cam-img" src="assets/camera.jpg" alt="Câmera fotográfica — clique para ver o portfólio">
+<img id="cam-img" class="cam-img" src="assets/camera.png" alt="Câmera fotográfica — clique para ver o portfólio">
 </div>
 <div class="cam-shadow" aria-hidden="true"></div>
 </div>
